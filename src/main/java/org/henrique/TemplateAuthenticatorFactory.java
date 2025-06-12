@@ -9,6 +9,8 @@ import org.keycloak.models.KeycloakSessionFactory;
 import org.keycloak.models.credential.PasswordCredentialModel;
 import org.keycloak.provider.ProviderConfigProperty;
 
+
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.keycloak.models.AuthenticationExecutionModel.*;
@@ -20,7 +22,7 @@ public class TemplateAuthenticatorFactory implements AuthenticatorFactory {
     private static final List<ProviderConfigProperty> configProperties;
 
     static {
-        configProperties = List.of();
+        configProperties = new ArrayList<>();
 
         ProviderConfigProperty uri = new ProviderConfigProperty();
         uri.setType(ProviderConfigProperty.STRING_TYPE);
