@@ -1,6 +1,6 @@
 <#macro registrationLayout displayMessage=true showAnotherWayIfPresent=true>
 <!DOCTYPE html>
-<html lang="${lang}">
+<html>
 <head>
     <meta http-equiv="Content-Type" contect="text/html" charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <#if properties.meta?has_content>
         <#list properties.meta?split(' ') as meta>
             <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
-        <#/list>
+        </#list>
     </#if>
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
@@ -17,7 +17,7 @@
         </#list>
     </#if>
     <#if properties.scripts?has_content>
-        <#list properties.scripts?split(' ') as scripts>
+        <#list properties.scripts?split(' ') as script>
             <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
         </#list>
     </#if>
